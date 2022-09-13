@@ -36,6 +36,7 @@ class Documenti
     {
         $this->utenti = new ArrayCollection();
         $this->data_create = Carbon::now();
+        $this->date_update = Carbon::now();
     }
 
     public function getId(): ?int
