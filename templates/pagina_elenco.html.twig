@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} elenco pagina {% endblock %}
+
+{% block body %}
+    <div>
+        {{ form(variabile_pagina_elenco) }}
+    </div>
+    <div>
+        <table>
+            <thead>
+            <tr>
+                <th></th>
+                {% for header in headers %}
+                    <th>{{ header }}</th>
+                {% endfor %}
+            </tr>
+            </thead>
+            <tbody>
+            {% for item in items %}
+                <tr>
+
+                    <td>{{ item.titolo }}</td>
+                    <td>{{ item.descrizione }}</td>
+                    <td>{{ item.data_create }}</td>
+                    <td>{{ item.date_update }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
